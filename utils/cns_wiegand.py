@@ -14,8 +14,6 @@ class Wiegand:
         GPIO.setup(data0_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         GPIO.setup(data1_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-        GPIO.add_event_detect(data0_pin, GPIO.FALLING, callback=self.data0, bouncetime=300)
-        GPIO.add_event_detect(data1_pin, GPIO.FALLING, callback=self.data1, bouncetime=300)
 
     def data0(self, channel):
         self.data_bits.append(0)
