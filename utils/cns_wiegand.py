@@ -13,6 +13,8 @@ class Wiegand:
         GPIO.setup(data0_pin, GPIO.IN)
         GPIO.setup(data1_pin, GPIO.IN)
 
+        GPIO.cleanup(data0_pin)
+        GPIO.cleanup(data1_pin)
         GPIO.add_event_detect(data0_pin, GPIO.FALLING, callback=self.data0, bouncetime=300)
         GPIO.add_event_detect(data1_pin, GPIO.FALLING, callback=self.data1, bouncetime=300)
 
