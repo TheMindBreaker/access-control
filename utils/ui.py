@@ -1,5 +1,4 @@
-import utils.cns_wiegand as wiegand
-import config
+import cns_wiegand as wiegand
 
 
 WIEGAND_ZERO = 4
