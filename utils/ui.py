@@ -2,9 +2,12 @@ import utils.cns_wiegand as wiegand
 import config
 
 
-def on_card(card_number, facility_code, cards_read):
-	print(card_number)
-	print(facility_code)
-	print(card_number)
-	
-data = wiegand.read(config.WIEGAND[0], config.WIEGAND[1])
+WIEGAND_ZERO = 4
+WIEGAND_ONE = 17
+
+def on_card(facility_code, card_code):
+    print('Facility Code: ', facility_code)
+    print('Card Code: ', card_code)
+
+wg = wiegand(WIEGAND_ZERO, WIEGAND_ONE, on_card)
+wg.listen()
