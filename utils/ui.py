@@ -9,7 +9,7 @@ def on_card(facility_code, card_code):
     print('Card Code: ', card_code)
 
 try:
-    wg = Wiegand(3, 4, on_card)
+    wg = Wiegand(17, 27, on_card)
     # Other code
 finally:
     GPIO.cleanup()
