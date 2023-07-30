@@ -1,4 +1,4 @@
-import cns_wiegand as wiegand
+import utils.cns_wiegand as wiegand
 import config
 
 
