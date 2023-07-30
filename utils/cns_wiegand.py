@@ -10,11 +10,10 @@ class Wiegand:
         self.callback = callback
 
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(data0_pin, GPIO.IN)
-        GPIO.setup(data1_pin, GPIO.IN)
 
-        GPIO.cleanup(data0_pin)
-        GPIO.cleanup(data1_pin)
+        GPIO.setup(data0_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(data1_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
         GPIO.add_event_detect(data0_pin, GPIO.FALLING, callback=self.data0, bouncetime=300)
         GPIO.add_event_detect(data1_pin, GPIO.FALLING, callback=self.data1, bouncetime=300)
 
