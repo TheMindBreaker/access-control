@@ -8,5 +8,5 @@ def on_card(facility_code, card_code):
     print('Facility Code: ', facility_code)
     print('Card Code: ', card_code)
 
-wg = wiegand(WIEGAND_ZERO, WIEGAND_ONE, on_card)
+wg = wiegand(3, 4, on_card)
 wg.listen()
