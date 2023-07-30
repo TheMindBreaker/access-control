@@ -8,9 +8,10 @@ def on_card(facility_code, card_code):
     print('Facility Code: ', facility_code)
     print('Card Code: ', card_code)
 
-try:
-    wg = Wiegand(17, 27, on_card)
-    # Other code
-finally:
-    GPIO.cleanup()
+while True:
+    try:
+        wg = Wiegand(17, 27, on_card)
+        # Other code
+    finally:
+        GPIO.cleanup()
 
